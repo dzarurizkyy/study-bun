@@ -1,0 +1,20 @@
+{
+  "name": "study-bun-hono-restful-api",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --target=bun --outdir=dist",
+    "binary": "bun build src/index.ts --compile --target=bun-linux-arm64 --outfile hono-restful-api"
+  },
+  "dependencies": {
+    "@prisma/adapter-mariadb": "^7.7.0",
+    "@prisma/client": "^7.7.0",
+    "hono": "^4.12.14",
+    "mariadb": "^3.5.2",
+    "winston": "^3.19.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prisma": "^7.7.0"
+  }
+}

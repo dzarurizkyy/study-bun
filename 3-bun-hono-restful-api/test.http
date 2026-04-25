@@ -1,0 +1,154 @@
+GET http://localhost:3001
+
+### Register User
+POST http://localhost:3001/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "dzaru",
+    "password": "dzaru2024",
+    "name": "Dzaru Rizky Fathan Fortuna"
+}
+
+### Login User
+POST http://localhost:3001/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "dzaru",
+    "password": "dzaru2025"
+}
+
+
+### Get Current User
+GET http://localhost:3001/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+### Update User
+PATCH http://localhost:3001/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+{
+    "name": "Dzaru Rizky"
+}
+
+### Update User Password
+PATCH http://localhost:3001/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+{
+    "password": "dzaru2025"
+}
+
+### Logout User
+DELETE http://localhost:3001/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+
+### Create Contact
+POST http://localhost:3001/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+{
+    "first_name": "Dzaru",
+    "last_name": "Rizky",
+    "email": "dzarurizky@example.com",
+    "phone": "08123456789"
+}
+
+
+### Search Contact
+GET http://localhost:3001/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+### Search Contact With Query Param
+GET http://localhost:3001/api/contacts?name=Rizky
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+### Get Contact
+GET http://localhost:3001/api/contacts/2553
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+### Update Contact
+PUT http://localhost:3001/api/contacts/2552
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+{
+    "first_name": "Jasper",
+    "last_name": "Business",
+    "email": "jasperbusiness2022@gmail.com",
+    "phone": "08123456789"
+}
+
+### Delete Contact
+DELETE http://localhost:3001/api/contacts/2552
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+### Create Address
+POST http://localhost:3001/api/contacts/2553/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+{
+    "street": "Jl. Kemanggisan Utama Raya",
+    "city": "Jakarta Barat",
+    "province": "DKI Jakarta",
+    "country": "Indonesia",
+    "postal_code": "11540"
+}
+
+### List Address
+GET http://localhost:3001/api/contacts/2553/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+### Detail Address
+GET http://localhost:3001/api/contacts/2553/addresses/158
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+### Update Address
+PUT http://localhost:3001/api/contacts/2553/addresses/158
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
+{
+    "street": "Jl. Kb. Jeruk",
+    "city": "Jakarta Barat",
+    "province": "DKI Jakarta",
+    "country": "Indonesia",
+    "postal_code": "11540"
+}
+
+### Delete Address
+DELETE http://localhost:3001/api/contacts/2553/addresses/158
+Content-Type: application/json
+Accept: application/json
+Authorization: fa8af6a8-59a1-4e7c-9153-e7942ee922ea
+
