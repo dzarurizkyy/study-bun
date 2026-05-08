@@ -270,6 +270,8 @@ Bun Package Manager supports **Workspaces** — a feature for managing multiple 
   2. Initialize each sub-package with `bun init`
   3. Declare workspaces in the root `package.json`
 
+  <br />
+
   ```json
   {
     "name": "study-bun",
