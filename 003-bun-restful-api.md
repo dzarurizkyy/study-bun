@@ -408,8 +408,6 @@ export default app;
 | PATCH | `/api/users/current` | ✅ | Update name/password |
 | DELETE | `/api/users/logout` | ✅ | Clear the token (logout) |
 
-> Full request/response spec lives in [`doc/user.md`](doc/user.md) — though see the note under [Stage 5](#stage-5-logout-user): the implemented logout route and response shape both differ slightly from what that file describes.
-
 ---
 
 ### Stage 1: Register User
@@ -934,8 +932,6 @@ UserController.delete("/api/users/logout", async (c) => {
 });
 ```
 
-> ⚠️ **Note:** Two small mismatches between [`doc/user.md`](doc/user.md) and the actual code, worth knowing if you go looking for either: the spec doc describes the endpoint as `DELETE /api/users/current`, but the route actually registered is `DELETE /api/users/logout` (the table above reflects the real route). And the spec doc shows a `{ "data": true }` response body, but the controller returns the bare JSON string `"OK"` — the test asserts `expect(body).toBe("OK")`, not `body.data`.
-
 **`src/test/user.test.ts`** (add `describe("DELETE /api/users/logout")`)
 
 ```typescript
@@ -991,8 +987,6 @@ With this, all of **User Management** is done: Register → Login → Get Curren
 | DELETE | `/api/contacts/:contactId` | ✅ | Delete a contact |
 | GET | `/api/contacts` | ✅ | Search + pagination |
 
-> Full request/response spec lives in [`doc/contact.md`](doc/contact.md).
->
 > **Key Insight:** Every Contact route sits behind `contactController.use(authMiddleware)`, and every query always filters by `username: user.username`. This prevents user A from reading/modifying user B's contact even if they know the ID (Insecure Direct Object Reference).
 
 ---
@@ -1452,8 +1446,6 @@ contactController.get("/api/contacts", async (c) => {
 });
 ```
 
-> **Note:** [`doc/contact.md`](doc/contact.md) shows the search response's `paging` object as `{ "page", "size", "total" }`, but the actual field is named `total_pages` (matching `page-model.ts`) — the code is what the tests exercise, so trust the field name here over the spec doc.
-
 **`src/test/contact.test.ts`** (add `describe("GET /api/contacts")`)
 
 ```typescript
@@ -1511,8 +1503,6 @@ Contact Management is done: Create → Get → Update/Delete → Search.
 | DELETE | `/api/contacts/:contactId/addresses/:addressId` | ✅ | Delete an address |
 | GET | `/api/contacts/:contactId/addresses` | ✅ | List all addresses of a contact |
 
-> Full request/response spec lives in [`doc/address.md`](doc/address.md).
->
 > **Key Insight:** An address is always accessed **through its contact** — the URL is always shaped like `/api/contacts/:contactId/addresses/...`. This reinforces the `User → Contact → Address` chain: `addressMustExists` checks the contact first, then the address.
 >
 > ⚠️ **Worth double-checking:** Unlike `UserController` and `contactController`, `addressController` in the current source never calls `.use(authMiddleware)`. Since each domain is its own `Hono` instance, middleware registered on `contactController` doesn't carry over to `addressController` when both are mounted with `app.route("/", ...)` in `index.ts` — a request would need `addressController.use(authMiddleware);` of its own to get the same protection. Worth adding for consistency with the other two modules, even though `addressMustExists` still checks contact **ownership** once `user` is available.
