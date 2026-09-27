@@ -6,9 +6,9 @@ This repository contains a comprehensive reference guide for Bun — covering th
 
 1. **Install Bun**:
 
-  ```bash
-  curl -fsSL https://bun.sh/install | bash
-  ```
+    ```bash
+    curl -fsSL https://bun.sh/install | bash
+    ```
 
    > **Windows**: `powershell -c "irm bun.sh/install.ps1 | iex"`
 
