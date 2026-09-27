@@ -5,11 +5,10 @@ This repository contains a comprehensive reference guide for Bun — covering th
 ## Installation 🔧
 
 1. **Install Bun**:
-   - Run the official install script:
 
-     ```bash
-     curl -fsSL https://bun.sh/install | bash
-     ```
+  ```bash
+  curl -fsSL https://bun.sh/install | bash
+  ```
 
    > **Windows**: `powershell -c "irm bun.sh/install.ps1 | iex"`
 
@@ -58,7 +57,7 @@ This repository contains a comprehensive reference guide for Bun — covering th
     });
   ```
 
-- 🚀 **[Hono RESTful API — Contact Management](003-bun-restful-api.md)**
+- 🚀 **[Bun Study Case — Contact Management](003-bun-study-case.md)**
 
   A full RESTful API built stage by stage across three modules — User → Contact → Address — using Hono, Prisma (MariaDB), Zod, and Winston:
 
@@ -75,8 +74,7 @@ This repository contains a comprehensive reference guide for Bun — covering th
 
 ## 📍 References
 
-- [Bun Docs](https://bun.sh/docs)
-- [Hono Docs](https://hono.dev/docs)
+- [Udemy](https://www.udemy.com/course/belajar-bun/?srsltid=AU7gw4U9CRKzdeJssSlyOFH7ZbcoJWuJ-hyp9ExBwZU-yglbIMXFZY7K&couponCode=KEEPLEARNING)
 
 ## 👨‍💻 Contributors
 
