@@ -2183,3 +2183,4 @@ src/
 - **Centralized error handling via `app.onError`**: `HTTPException` → its own status, `ZodError` → 400, anything else → 500. Services/controllers just `throw`.
 - **Auth is a raw `Authorization` header**, not a `Bearer` scheme or JWT — the token is a plain column on `user`, matched directly by `authMiddleware`. Simple for learning purposes; a production system would likely add expiry via JWT or a session store.
 - **Consistency across per-domain routers is easy to lose**: `UserController` and `contactController` both call `.use(authMiddleware)`, but `addressController` doesn't — a good example of how splitting routing into one `Hono` instance per domain means auth has to be *repeated* deliberately on every instance, since there's no single shared middleware chain enforcing it automatically.
+  
