@@ -11,27 +11,15 @@ This repository contains a comprehensive reference guide for Bun — covering th
      curl -fsSL https://bun.sh/install | bash
      ```
 
-   - Verify the installation:
+   > **Windows**: `powershell -c "irm bun.sh/install.ps1 | iex"`
 
-     ```bash
-     bun --version
-     ```
-
-   > Reference: [bun.sh/docs/installation](https://bun.sh/docs/installation)
-
-2. **Clone the Repository**:
+2. **Verify the Installation**:
 
    ```bash
-   git clone https://github.com/dzarurizkyy/study-bun.git
-   cd study-bun
+   bun --version
    ```
 
-3. **Install Docker** (only needed for [Chapter 3](003-bun-restful-api.md)):
-   - The RESTful API chapter runs its database in a local **MariaDB** container — install [Docker](https://www.docker.com/) beforehand if you want to follow along with that chapter
-
-4. **Follow Along Per Chapter**:
-   - Each chapter scaffolds its own project folder, with the setup commands (`bun init`, `bun create hono`, dependency installs) written into that chapter as its own step
-   - Start with [Bun Basics](001-bun-basics.md) — every later chapter builds on the same runtime
+   > Reference: [bun.sh/docs/installation](https://bun.sh/docs/installation)
 
 ## List of Material 📚
 
